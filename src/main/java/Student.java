@@ -1,5 +1,5 @@
 
-import java.time.LocalDate;
+import org.joda.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import org.joda.time.Years;
@@ -32,6 +32,10 @@ public class Student {
         this.name = name;
     }
 
+    public String getUsername(){
+        return getName() + getAge();
+    }
+    
     public int getAge(){
         return Years.yearsBetween(dateOfBirth, new LocalDate()).getYears();
     }
